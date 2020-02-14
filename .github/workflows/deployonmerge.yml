@@ -1,0 +1,16 @@
+name: Python application
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python 3.7
+        if: github.event.pull_request.merged
+        run: echo merged
+         
